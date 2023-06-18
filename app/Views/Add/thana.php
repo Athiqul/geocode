@@ -66,7 +66,7 @@
           let html='<option value="">Select Division</option>';
            payload.forEach(function(item){
              // console.log(item);
-              html+=`<option value=${item.div_id}>${item.en_name}</option>`
+              html+=`<option value=${item.id}>${item.en_name}</option>`
            });
 
            div.innerHTML=html;
@@ -86,7 +86,7 @@
       console.log(data.msg);
       let html='';
       data.msg.forEach(function(item){
-         html+=`<option value=${item.dis_id}>${item.en_name}</option>`;
+         html+=`<option value=${item.id}>${item.en_name}</option>`;
       });
       dis.innerHTML=html;
    }).catch(err=>console.log(err))

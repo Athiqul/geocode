@@ -38,7 +38,7 @@ class Unions extends ResourceController
       //validation
       $validate=[
        "thana_id"=>[
-          'rules'=>'required|is_not_unique[thana.thana_id]',
+          'rules'=>'required|is_not_unique[thana.id]',
           'errors'=>[
              'required'=>'No Thana provided',
              'is_not_unique'=>'Valid thana needed'

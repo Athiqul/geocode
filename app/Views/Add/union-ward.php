@@ -73,7 +73,7 @@
           let html='<option value="">Select Division</option>';
            payload.forEach(function(item){
              // console.log(item);
-              html+=`<option value=${item.div_id}>${item.bn_name}</option>`
+              html+=`<option value=${item.id}>${item.bn_name}</option>`
            });
 
            div.innerHTML=html;
@@ -93,7 +93,7 @@
       console.log(data.msg);
       let html='';
       data.msg.forEach(function(item){
-         html+=`<option value=${item.dis_id}>${item.bn_name}</option>`;
+         html+=`<option value=${item.id}>${item.bn_name}</option>`;
       });
       dis.innerHTML=html;
    }).catch(err=>console.log(err))
@@ -108,7 +108,7 @@
       console.log(data.msg);
       let html='';
       data.msg.forEach(function(item){
-         html+=`<option value=${item.thana_id}>${item.bn_name}</option>`;
+         html+=`<option value=${item.id}>${item.bn_name}</option>`;
       });
       thana.innerHTML=html;
    }).catch(err=>console.log(err))
@@ -131,7 +131,7 @@
             bn_name:bnName,
           }
 
-         // console.log(data);
+         console.log(data);
            
           fetch('<?=site_url('/api/create-union-ward')?>',{
             method:"POST",

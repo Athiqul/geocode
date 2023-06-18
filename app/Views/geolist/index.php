@@ -74,7 +74,7 @@
           let html='<option value="">Select Division</option>';
            payload.forEach(function(item){
              // console.log(item);
-              html+=`<option value=${item.div_id}>${item.en_name}</option>`
+              html+=`<option value=${item.id}>${item.en_name}</option>`
            });
 
            div.innerHTML=html;
@@ -84,9 +84,10 @@
   .catch(err=>{
     console.log(err);
   });
-
+   
+  
   div.addEventListener('change',function(){
-   //console.log(this.value);
+    console.log(div)
    //fetch districts
    fetch('<?=site_url('/api/division-to-districts/')?>'+this.value)
    .then(res=>res.json())
@@ -94,7 +95,7 @@
       console.log(data.msg);
       let html='';
       data.msg.forEach(function(item){
-         html+=`<option value=${item.dis_id}>${item.en_name}</option>`;
+         html+=`<option value=${item.id}>${item.en_name}</option>`;
       });
       dis.innerHTML=html;
       load(data.msg,'dis');
@@ -110,7 +111,7 @@
       console.log(data.msg);
       let html='';
       data.msg.forEach(function(item){
-         html+=`<option value=${item.thana_id}>${item.en_name}</option>`;
+         html+=`<option value=${item.id}>${item.en_name}</option>`;
       });
       thana.innerHTML=html;
       load(data.msg,'thana');
